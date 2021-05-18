@@ -42,3 +42,7 @@ const sort_by_key = (arr, key_func, options = {ascending: true}) => {
         return options.ascending ? result : -result;
     });
 }
+
+const extract_from => (obj, keys) {
+  return keys.reduce((res, key) => ((res[key] = obj[key]), res), {});
+}
