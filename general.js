@@ -35,6 +35,13 @@ function extractFrom(obj, keys) {
   return keys.reduce((res, key) => ((res[key] = obj[key]), res), {});
 }
 
+/**
+ * "exampleString" -> "example-string"
+ */
+function camelToKebabCase(str) {
+  return str.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+}
+
 function h(tagName, props, ...children) {
   const element = document.createElement(tagName);
 
