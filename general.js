@@ -23,8 +23,8 @@ function lastOf(arr) {
  * sort elements by some key function
  * similar to python's sort(lst, key=lambda...)
  */
-function sortBy(arr, keyFunc, { ascending = true} = {}) {
-    return arr.sort(function(a, b) {
+function sortBy(arr, keyFunc, { ascending = true } = {}) {
+    return arr.sort((a, b) => {
         const x = keyFunc(a), y = keyFunc(b);
         const result = (x < y) ? -1 : (x > y) ? +1 : 0;
         return ascending ? result : -result;
