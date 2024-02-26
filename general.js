@@ -5,8 +5,9 @@ const range = (n) => [...Array(n).keys()];
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const zip = (A, B) => {
-    if (A.length > B.length) [A, B] = [B, A];
-    return A.map((a, i) => [a, B[i]]);
+  return A.length <= B.length
+    ? A.map((a, i) => [a, B[i]])
+    : B.map((b, i) => [A[i], b]);
 };
 
 const round = (x, multiple_of = 1) => Math.round(x / multiple_of) * multiple_of;
