@@ -1,7 +1,11 @@
 'use strict';
 
-const range = (n) => [...Array(n).keys()];
-
+function range(n, m = undefined) {
+  if (m === undefined) {
+    return [...Array(n).keys()];
+  }
+  return range(m - n).map((x) => x + n);
+}
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const zip = (A, B) => {
