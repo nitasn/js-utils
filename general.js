@@ -77,3 +77,9 @@ function addStyleSheet(css) {
   document.head.appendChild(styleElement);
   return styleElement;
 }
+
+function numberAsSuperscript(num) {
+  const superscript = '⁰¹²³⁴⁵⁶⁷⁸⁹';
+  const sign = num < 0 ? '⁻' : '';
+  return sign + Math.abs(num).toString().replace(/\d/g, (d) => superscript[d]);
+}
